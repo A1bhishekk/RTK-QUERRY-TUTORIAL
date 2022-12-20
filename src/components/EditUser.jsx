@@ -46,7 +46,7 @@ const EditUser = () => {
 
     const handleClick =async (e) => {
         e.preventDefault()
-        await updateUser(userdata)
+        await updateUser(data)
         navigate('/')
     
     }

@@ -8,9 +8,9 @@ const UserCard = ({data}) => {
     const navigate = useNavigate()
 
     return (
-            <div className="user-card"  >
+            <div className="user-card"  key={_id}>
                 <div className="imgBx">
-                    <img src="https://source.unsplash.com/random/?girls" alt="unsplash" />
+                    <img src={`https://i.pravatar.cc/150?u=${_id}`} alt="pravtar" />
                 </div>
 
                 <div className="content">

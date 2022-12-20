@@ -2,6 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import './App.css'
 import AddUser from './components/AddUser'
+import EditUser from './components/EditUser'
 import Home from './components/Home'
 
 const App = () => {
@@ -10,6 +11,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/adduser" element={<AddUser />} />
+        <Route path="/edituser/:id" element={<EditUser />} />
+
 
 
 

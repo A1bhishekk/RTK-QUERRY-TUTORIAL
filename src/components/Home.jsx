@@ -1,11 +1,16 @@
 import React from 'react'
-import { useGetAlluserQuery } from '../redux/services/user'
+import { useGetAlluserQuery ,useDeleteUserMutation} from '../redux/services/user'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
 
     const { data, isFetching, isSuccess } = useGetAlluserQuery()
+    const [deleteUser,resinfo] = useDeleteUserMutation()
+    // console.log(resinfo)
 
+   
+
+   
 
 
     return (
@@ -26,6 +31,8 @@ const Home = () => {
                                     <p>Email:{item.email}</p>
                                     <p>Phone:{item.phone}</p>
                                     <p>Age:{item.age}</p>
+                                    <button onClick={()=>deleteUser(item._id)}>delete</button>
+                                    <Link  style={{ color: "green", fontWeight: "800" }} to={`/edituser/${item._id}`}>Edit</Link>
                                 </div>
                             </div>
                         )

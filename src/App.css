@@ -34,7 +34,7 @@ body{
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 5rem;
   margin: 60px auto;
-  border: 5px solid #ee044e;
+  /* border: 5px solid #ee044e; */
   padding: 2rem;
   padding-top: 4rem;
 

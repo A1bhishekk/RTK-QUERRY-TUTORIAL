@@ -19,9 +19,9 @@ export const userApi = createApi({
                 url: 'users',
                 method: 'POST',
                 body: user,
-                headers: {
-                    'Content-Type': 'application/json; charset=UTF-8',
-                }
+                // headers: {
+                //     'Content-Type': 'application/json; charset=UTF-8',
+                // }
             }),
             invalidatesTags: ['User'],
         }),
@@ -36,13 +36,13 @@ export const userApi = createApi({
         }),
 
         updateUser: builder.mutation({
-            query: (user) => ({
-                url: `users/${user.id}`,
+            query: ({_id,...user}) => ({
+                url: `users/${_id}`,
                 method: 'PUT',
                 body: user,
-                headers: {
-                    'Content-Type': 'application/json; charset=UTF-8',
-                }
+                // headers: {
+                //     'Content-Type': 'application/json; charset=UTF-8',
+                // }
             }),
             invalidatesTags: ['User'],
         }),

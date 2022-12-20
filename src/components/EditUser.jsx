@@ -1,14 +1,32 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useUpdateUserMutation } from '../redux/services/user'
+import React, { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useUpdateUserMutation ,useGetAlluserQuery} from '../redux/services/user'
 
 const EditUser = () => {
-    const [userdata, setUserdata] = useState({
+    const [data, setData] = useState({
         name: "",
         email: "",
         phone: "",
         age: ""
     })
+
+    const location = useLocation()
+    // console.log(location)
+    const userId = location.pathname.split('/')[2]
+    // console.log(userId)
+
+    const { data:userdata} = useGetAlluserQuery(undefined,{
+        selectFromResult:({data})=>({
+            data:data?.find((item)=>item._id===userId)
+        })
+    })
+
+    useEffect(()=>{
+        if(userdata){
+            setData(userdata)
+            console.log(data)
+        }
+    },[userdata])
 
     const [updateUser,resinfo] = useUpdateUserMutation()
 
@@ -16,8 +34,8 @@ const EditUser = () => {
 
 
     const handleChange = (e) => {
-        setUserdata({
-            ...userdata,
+        setData({
+            ...data,
             [e.target.name]: e.target.value
 
         })
@@ -28,8 +46,7 @@ const EditUser = () => {
 
     const handleClick =async (e) => {
         e.preventDefault()
-        // await updateUser(userdata)
-        
+        await updateUser(userdata)
         navigate('/')
     
     }
@@ -40,10 +57,19 @@ const EditUser = () => {
     <div className="formcontainer">
     <h1>Edit User</h1>
     <form >
-        <input type="text" placeholder='name' name='name' onChange={handleChange} />
-        <input type="text" placeholder='email' name='email' onChange={handleChange} />
-        <input type="text" placeholder='phone' name='phone' onChange={handleChange} />
-        <input type="text" placeholder='age' name='age' onChange={handleChange} />
+        <input type="text" placeholder='name' name='name' onChange={handleChange} 
+        value={data.name}
+
+        />
+        <input type="text" placeholder='email' name='email' onChange={handleChange} 
+        value={data.email}
+        />
+        <input type="text" placeholder='phone' name='phone' onChange={handleChange}
+        value={data.phone}
+         />
+        <input type="text" placeholder='age' name='age' onChange={handleChange} 
+        value={data.age}
+        />
         <button type='submit' onClick={handleClick}>Edit User</button>
 
     </form>

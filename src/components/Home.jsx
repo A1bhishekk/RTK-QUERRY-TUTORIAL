@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useGetAlluserQuery ,useDeleteUserMutation} from '../redux/services/user'
-import { Link } from 'react-router-dom'
+
 
 const Home = () => {
 
+    const navigate = useNavigate()
+    // console.log(useNavigate)
     const { data, isFetching, isSuccess } = useGetAlluserQuery()
     const [deleteUser,resinfo] = useDeleteUserMutation()
     // console.log(resinfo)
@@ -32,7 +35,9 @@ const Home = () => {
                                     <p>Phone:{item.phone}</p>
                                     <p>Age:{item.age}</p>
                                     <button onClick={()=>deleteUser(item._id)}>delete</button>
-                                    <Link  style={{ color: "green", fontWeight: "800" }} to={`/edituser/${item._id}`}>Edit</Link>
+                                    <button onClick={()=>navigate(
+                                        `/edituser/${item._id}`
+                                    )}>edit</button>
                                 </div>
                             </div>
                         )

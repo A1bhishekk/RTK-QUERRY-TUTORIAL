@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAddUserMutation } from "../redux/services/user"
 
 const AddUser = () => {
-    const [userdata, setUserdata] = useState({
+    const [data, setData] = useState({
         name: "",
         email: "",
         phone: "",
@@ -14,8 +14,8 @@ const AddUser = () => {
     const [addUser] = useAddUserMutation()
 
     const handleChange = (e) => {
-        setUserdata({
-            ...userdata,
+        setData({
+            ...data,
             [e.target.name]: e.target.value
 
         })
@@ -26,8 +26,8 @@ const AddUser = () => {
 
     const handleClick =async (e) => {
         e.preventDefault()
-        await addUser(userdata)
-        setUserdata({
+        await addUser(data)
+        setData({
             name: "",
             email: "",
             phone: "",
@@ -44,10 +44,18 @@ const AddUser = () => {
             <div className="formcontainer">
                 <h1>Add User</h1>
                 <form >
-                    <input type="text" placeholder='name' name='name' onChange={handleChange} />
-                    <input type="text" placeholder='email' name='email' onChange={handleChange} />
-                    <input type="text" placeholder='phone' name='phone' onChange={handleChange} />
-                    <input type="text" placeholder='age' name='age' onChange={handleChange} />
+                    <input type="text" placeholder='name' name='name' onChange={handleChange}
+                        value={data.name}
+                     />
+                    <input type="text" placeholder='email' name='email' onChange={handleChange} 
+                        value={data.email}
+                    />
+                    <input type="text" placeholder='phone' name='phone' onChange={handleChange} 
+                        value={data.phone}
+                    />
+                    <input type="text" placeholder='age' name='age' onChange={handleChange}
+                        value={data.age}
+                     />
                     <button type='submit' onClick={handleClick}>Add User</button>
 
                 </form>

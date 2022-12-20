@@ -27,7 +27,7 @@ h2{
   position: sticky;
   top: 0;
   z-index: 1;
-  
+
 }
 .cardcontainer{
   display:grid;
@@ -103,4 +103,5 @@ button{
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   text-align: center;
+  margin: 10px;
 }

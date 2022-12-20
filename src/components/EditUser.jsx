@@ -59,16 +59,20 @@ const EditUser = () => {
     <form >
         <input type="text" placeholder='name' name='name' onChange={handleChange} 
         value={data.name}
+        autoComplete='off' 
 
         />
         <input type="text" placeholder='email' name='email' onChange={handleChange} 
         value={data.email}
+        autoComplete='off' 
         />
         <input type="text" placeholder='phone' name='phone' onChange={handleChange}
         value={data.phone}
+        autoComplete='off' 
          />
         <input type="text" placeholder='age' name='age' onChange={handleChange} 
         value={data.age}
+        autoComplete='off' 
         />
         <button type='submit' onClick={handleClick}>Edit User</button>
 

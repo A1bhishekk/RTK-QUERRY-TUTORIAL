@@ -24,7 +24,7 @@ const AddUser = () => {
 
     const navigate = useNavigate()
 
-    const handleClick =async (e) => {
+    const handleClick = async (e) => {
         e.preventDefault()
         await addUser(data)
         setData({
@@ -34,7 +34,7 @@ const AddUser = () => {
             age: ""
         })
         navigate('/')
-    
+
     }
 
 
@@ -45,17 +45,21 @@ const AddUser = () => {
                 <h1>Add User</h1>
                 <form >
                     <input type="text" placeholder='name' name='name' onChange={handleChange}
+                        autoComplete='off'
                         value={data.name}
-                     />
-                    <input type="text" placeholder='email' name='email' onChange={handleChange} 
+                    />
+                    <input type="text" placeholder='email' name='email' onChange={handleChange}
+                        autoComplete='off'
                         value={data.email}
                     />
-                    <input type="text" placeholder='phone' name='phone' onChange={handleChange} 
+                    <input type="text" placeholder='phone' name='phone' onChange={handleChange}
+                        autoComplete='off'
                         value={data.phone}
                     />
                     <input type="text" placeholder='age' name='age' onChange={handleChange}
+                        autoComplete='off'
                         value={data.age}
-                     />
+                    />
                     <button type='submit' onClick={handleClick}>Add User</button>
 
                 </form>

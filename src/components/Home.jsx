@@ -29,7 +29,7 @@ const Home = () => {
                 {
                     data?.map((item) => {
                         return (
-                            <UserCard data={item}/>
+                            <UserCard key={item._id} data={item}/>
                         )
                     })
                 }

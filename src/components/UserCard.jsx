@@ -8,7 +8,7 @@ const UserCard = ({data}) => {
     const navigate = useNavigate()
 
     return (
-            <div className="user-card">
+            <div className="user-card"  >
                 <div className="imgBx">
                     <img src="https://source.unsplash.com/random/?girls" alt="unsplash" />
                 </div>

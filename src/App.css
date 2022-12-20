@@ -34,6 +34,9 @@ body{
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 5rem;
   margin: 60px auto;
+  border: 5px solid #ee044e;
+  padding: 2rem;
+  padding-top: 4rem;
 
 }
 
@@ -119,8 +122,7 @@ button{
 .user-card{
   position: relative;
   width: 300px;
-  height: 190px;
-  /* height: 450px; */
+  height: 350px;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 35px 80px rgba(0,0,0,0.15);
@@ -128,9 +130,7 @@ button{
 
 }
 
-.user-card:hover{
-  height: 350px;
-}
+
 .imgBx{
   position: absolute;
   left: 50%;
@@ -154,27 +154,20 @@ button{
   position: absolute;
   left: 0;
   top: 0;
-  /* transform: translate(-50%,-50%); */
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  /* border-radius: 20px; */
 }
 
 .user-card .content{
   position: absolute;
-  /* left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%); */
+
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  /* padding: 0 20px; */
-  /* text-align: center;
-  transition: all 0.5s ease-in-out; */
   overflow: hidden;
 }
 
@@ -183,12 +176,9 @@ button{
  text-align: center;
  width: 100%;
  transition: 0.5s;
- transform: translateY(160px);
 }
 
-.user-card:hover .content .details{
-  transform: translateY(0px);
-}
+
 
 
 
@@ -229,7 +219,6 @@ button{
 .user-card .content .details .actionBtn{
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   gap: 20px;
 }
 

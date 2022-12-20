@@ -1,0 +1,106 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(239, 4, 59);
+
+}
+a{
+  text-decoration: none;
+}
+body{
+  background-color: #160720;
+  font-family: 'Roboto', sans-serif;
+}
+h2{
+  
+  color: rgb(239, 4, 78);
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #01fcbd;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+}
+.cardcontainer{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem;
+
+}
+
+.card{
+  background-color: #d8a4fb;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.cardbody{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.formcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form{
+
+  background-color: #d8a4fb;
+  border-radius: 1rem;
+  padding: .5rem;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+
+}
+
+input{
+
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(239, 4, 78);
+  background-color: #160720;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+input:focus{
+  color: #ee044e;
+}
+
+button{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(252, 251, 251);
+  background-color: #e41945;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+}

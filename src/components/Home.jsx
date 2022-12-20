@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useGetAlluserQuery ,useDeleteUserMutation} from '../redux/services/user'
+import UserCard from './UserCard'
 
 
 const Home = () => {
@@ -28,18 +29,7 @@ const Home = () => {
                 {
                     data?.map((item) => {
                         return (
-                            <div className="card" key={item._id}>
-                                <div className="cardbody" >
-                                    <p>Name:{item.name}</p>
-                                    <p>Email:{item.email}</p>
-                                    <p>Phone:{item.phone}</p>
-                                    <p>Age:{item.age}</p>
-                                    <button onClick={()=>deleteUser(item._id)}>delete</button>
-                                    <button onClick={()=>navigate(
-                                        `/edituser/${item._id}`
-                                    )}>edit</button>
-                                </div>
-                            </div>
+                            <UserCard data={item}/>
                         )
                     })
                 }

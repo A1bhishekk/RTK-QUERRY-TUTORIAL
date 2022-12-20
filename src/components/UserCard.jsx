@@ -10,7 +10,7 @@ const UserCard = ({data}) => {
     return (
             <div className="user-card"  key={_id}>
                 <div className="imgBx">
-                    <img src={`https://i.pravatar.cc/150?u=${_id}`} alt="pravtar" />
+                    <img src={`https://i.pravatar.cc/150?u=667${_id}`} alt="pravtar" />
                 </div>
 
                 <div className="content">

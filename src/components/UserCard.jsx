@@ -8,7 +8,6 @@ const UserCard = ({data}) => {
     const {_id,name,email,phone,age}=data
     const [deleteUser,{isLoading,isSuccess,isError}] = useDeleteUserMutation()
     const navigate = useNavigate()
-    console.log(useDeleteUserMutation())
 
     useEffect(()=>{
         if(isLoading){

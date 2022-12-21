@@ -14,7 +14,7 @@ const AddUser = () => {
     })
 
     const [addUser,{isLoading,isSuccess,isError}] = useAddUserMutation()
-    console.log(isError)
+
 
     const handleChange = (e) => {
         setData({

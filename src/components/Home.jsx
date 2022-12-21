@@ -1,17 +1,22 @@
-import { Link} from 'react-router-dom'
+import { Link, Navigate, useNavigate} from 'react-router-dom'
 import { useGetAlluserQuery } from '../redux/services/user'
 import Spiner from './Spiner'
 import UserCard from './UserCard'
+import { PlusCircleFilled  } from '@ant-design/icons';
+import { Button} from 'antd';
 
 
 const Home = () => {
     const { data, isFetching, isSuccess } = useGetAlluserQuery()
+    const navigate=useNavigate()
 
     return (
         <div>
             <div className="header">
                 <h2>Abhishek </h2>
-                <Link style={{ color: "yellow", fontWeight: "800" }} to='/adduser'>Add New ID</Link>
+                <Button icon={<PlusCircleFilled />} danger onClick={()=>navigate('/addUser')}
+                    color="red"
+                >Add User</Button>
             </div>
 
 

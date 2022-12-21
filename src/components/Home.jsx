@@ -1,21 +1,11 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useGetAlluserQuery ,useDeleteUserMutation} from '../redux/services/user'
+import { Link} from 'react-router-dom'
+import { useGetAlluserQuery } from '../redux/services/user'
+import Spiner from './Spiner'
 import UserCard from './UserCard'
 
 
 const Home = () => {
-
-    const navigate = useNavigate()
-    // console.log(useNavigate)
     const { data, isFetching, isSuccess } = useGetAlluserQuery()
-    const [deleteUser,resinfo] = useDeleteUserMutation()
-    // console.log(resinfo)
-
-   
-
-   
-
 
     return (
         <div>
@@ -27,11 +17,12 @@ const Home = () => {
 
             <div className="cardcontainer">
                 {
-                    data?.map((item) => {
-                        return (
-                            <UserCard key={item._id} data={item}/>
-                        )
-                    })
+                    isFetching ?<Spiner/>  : isSuccess &&
+                        data?.map((item) => {
+                            return (
+                                <UserCard key={item._id} data={item} />
+                            )
+                        })
                 }
 
             </div>

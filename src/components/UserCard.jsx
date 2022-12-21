@@ -6,6 +6,7 @@ const UserCard = ({data}) => {
     const {_id,name,email,phone,age}=data
     const [deleteUser,resinfo] = useDeleteUserMutation()
     const navigate = useNavigate()
+    // console.log(resinfo)     
 
     return (
             <div className="user-card"  key={_id}>

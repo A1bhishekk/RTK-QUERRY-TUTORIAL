@@ -5,6 +5,10 @@
   /* color: rgb(239, 4, 59); */
 
 }
+/* hide scrollbar  */
+::-webkit-scrollbar {
+  display: none;
+}
 a{
   text-decoration: none;
 }

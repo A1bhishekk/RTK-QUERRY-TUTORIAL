@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useUpdateUserMutation ,useGetAlluserQuery} from '../redux/services/user'
+import { message } from 'antd';
 
+const key = 'edit_user';
 const EditUser = () => {
     const [data, setData] = useState({
         name: "",
@@ -28,7 +30,7 @@ const EditUser = () => {
         }
     },[userdata])
 
-    const [updateUser,resinfo] = useUpdateUserMutation()
+    const [updateUser,{isLoading,isSuccess,isError}] = useUpdateUserMutation()
 
 
 
@@ -50,6 +52,20 @@ const EditUser = () => {
         navigate('/')
     
     }
+
+    useEffect(()=>{
+        if(isLoading){
+            message.loading({content:"Editing user...",key})
+        }
+
+        if(isSuccess){
+            message.success({content:"Editing user Scuccessfull",key})
+        }
+        if(isError){
+            message.error({content:"Somthing went wrong",key})
+        }
+
+    },[isLoading,isSuccess,isError])
 
 
   return (

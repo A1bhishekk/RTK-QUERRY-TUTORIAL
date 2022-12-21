@@ -11,7 +11,7 @@ const Spiner = () => {
   return (
     <div>
     <HashLoader
-          color={"red"}
+          color={"#01fcbd"}
           loading={true}
           cssOverride={override}
           size={50}

@@ -14,9 +14,9 @@ const Home = () => {
         <div>
             <div className="header">
                 <h2>Abhishek </h2>
-                <Button icon={<PlusCircleFilled />} danger onClick={()=>navigate('/addUser')}
-                    color="red"
-                >Add User</Button>
+                <Button icon={<PlusCircleFilled />} onClick={()=>navigate('/addUser')}
+                style={{backgroundColor:"red",color:"white",border:"none",padding:"5px 20px"}}>
+                Add User</Button>
             </div>
 
 
